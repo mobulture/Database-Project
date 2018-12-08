@@ -1,0 +1,22 @@
+<html>
+<head>
+</head>
+<body>
+
+	{% if people %}
+	Which of the following did you mean to add?
+	<form action="/confirmfriend" method="POST">
+		<input type="hidden" name="fg_name" value={{fg_name}} />
+		<input type="hidden" name="admin_email" value={{admin_email}} />
+		{% for person in people %}
+			<input type="radio" name="verifyemail" value={{person.email}} />{{person.email}}</br>
+		{% endfor %}
+		<input type="submit" value = "Add Friend" />
+	</form>
+	{% endif %}
+<a href="/home">Go back</a>
+
+</body>
+
+
+</html>

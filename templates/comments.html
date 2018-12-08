@@ -1,0 +1,41 @@
+<html>
+<head>
+</head>
+<body>
+
+	Other Comments:
+	<table>
+		<th>Comment ID</th>
+		<th>Commenter</th>
+		<th>Comment</th>
+		<th>Time</th>
+
+	{% for comment in othercomments %}
+		<tr>
+			<td>{{comment.comment_id}}</td>
+			<td>{{comment.email_comment}}</td>
+			<td>{{comment.comment}}</td>
+			<td>{{comment.comment_time}}</td>
+		</tr>
+	{% endfor %}
+	</table>
+</br>
+Write a comment:
+	<form action="/givecomment" method="POST">
+		<input type="hidden" name="item_id" value={{item_id}} />
+		<input type="text" name = "comment" placeholder="comment" required/> </br>
+		<input type="submit" value = Comment />
+	</form>
+
+<style type="text/css">
+	table, th, td{
+		border: 1px solid black;
+	}
+</style>
+
+<a href="/home">Go back</a>
+
+</body>
+
+
+</html>

@@ -1,0 +1,40 @@
+<html>
+<head>
+</head>
+<body>
+
+  <form action="/createfriendgroup" method="POST">
+  	<input type="text" name = "fg_name" placeholder="Friend Group Name" required/></br>
+  	<input type="text" name = "description" placeholder="Description" /></br>
+  	<input type="submit" value = Create Friend Group />
+  </form>
+
+  <style type="text/css">
+  	table, th, td{
+  		border: 1px solid black;
+  	}
+  </style>
+
+  Here are your friend groups:
+
+  <table>
+  	<th>Friend Group Name</th>
+  	<th>Owner</th>
+
+
+  {% for group in groups %}
+  	<tr>
+  		<td>{{group.fg_name}}</td>
+  		<td>{{group.owner_email}}</td>
+  	</tr>
+  {% endfor %}
+  </table>
+
+  <br>
+  <a href="/home">Home</a>
+  <a href="/logout">Logout</a>
+
+  </body>
+
+
+  </html>

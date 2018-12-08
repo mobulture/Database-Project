@@ -1,0 +1,92 @@
+
+<html>
+<head>
+</head>
+<body>
+
+<form action="/post" method="POST" enctype="multipart/form-data">
+	<h1>Welcome {{email}}</h1>
+
+	{% with messages = get_flashed_messages() %}
+	{% if messages %}
+		{% for message in messages %}
+		<p class="error"><strong>Error:</strong> {{message}}</p>
+		{% endfor %}
+	{% endif %}
+	{% endwith %}
+
+<a href="/profile">Your Profile</a> </br>
+<a href="/tag">Your Tags</a> </br>
+
+Create a post: </br>
+	<input type="text" name = "item_name" placeholder="Item Name" required/> </br>
+	<input type="text" name = "item_link" placeholder="Item Link" required/> </br>
+	<input type="radio" name = "is_public" value="true" checked/>Public
+	<input type="radio" name = "is_public" value="false" />Private
+	<input type="submit" value = Post />
+</form>
+
+Create a Friend Group:
+<form action="/createfriendgroup" method="POST">
+	<input type="text" name = "fg_name" placeholder="Friend Group Name" required/></br>
+	<input type="text" name = "description" placeholder="Description" /></br>
+	<input type="submit" value = Create Friend Group />
+</form>
+
+Add friends to groups:
+<form action="/addfriend" method="POST">
+	<input type="text" name = "fname" placeholder="First Name" required/></br>
+	<input type="text" name = "lname" placeholder="Last Name" required/></br>
+	Groups you own: </br>
+	{% for item in owns %}
+	<input type="radio" name="owngroups" value={{item.fg_name}}/{{item.owner_email}} />{{item.fg_name}}</br>
+	{% endfor %}
+	Groups you moderate: </br>
+	{% for item in moddata %}
+		<input type="radio" name="owngroups" value={{item.fg_name}}/{{item.owner_email}} />{{item.fg_name}}, Owner:{{item.owner_email}}</br>
+	{% endfor %}
+	<input type="submit" value = "Add Friend" />
+</form>
+
+<style type="text/css">
+	table, th, td{
+		border: 1px solid black;
+	}
+</style>
+
+Other People's Posts:
+
+<table>
+	<th>Item ID</th>
+	<th>Poster</th>
+	<th>Time</th>
+	<th>Name</th>
+	<th>Post</th>
+
+
+
+{% for line in posts %}
+	<tr>
+		<td>{{line.item_id}}</td>
+		<td>{{line.email_post}}</td>
+		<td>{{line.post_time}}</td>
+		<td>{{line.item_name}}</td>
+		<td>{{line.file_path}}</td>
+		<td> <a href="/tagging?&item_id={{line.item_id}}">Tag</a></td>
+		<td> <a href="/rate?&item_id={{line.item_id}}">Rate</a></td>
+		<td> <a href="/comment?&item_id={{line.item_id}}">Comments</a></td>
+		<td> <a href="/more?&item_id={{line.item_id}}">More</a></td>
+	</tr>
+{% endfor %}
+</table>
+
+<br>
+
+
+</br>
+<a href="/logout">Logout</a>
+
+</body>
+
+
+</html>

@@ -1,0 +1,44 @@
+<html>
+<head>
+</head>
+<body>
+
+	Taggees:
+
+  <table>
+  	<th>First Name</th>
+  	<th>Last Name</th>
+
+  {% for line in tags %}
+  	<tr>
+  		<td>{{line.fname}}</td>
+  		<td>{{line.lname}}</td>
+
+  	</tr>
+  {% endfor %}
+</table></br>
+
+Ratings:
+
+<table>
+  <th>Rating</th>
+
+{% for item in ratings %}
+  <tr>
+    <td>{{item.emoji}}</td>
+  </tr>
+{% endfor %}
+</table></br>
+
+  <style type="text/css">
+  	table, th, td{
+  		border: 1px solid black;
+  	}
+  </style>
+
+<a href="/home">Home</a>
+
+</body>
+
+
+</html>

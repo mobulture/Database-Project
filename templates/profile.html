@@ -1,0 +1,101 @@
+<html>
+<head>
+</head>
+<body>
+
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+    <p class="error"><strong>Error:</strong> {{message}}</p>
+    {% endfor %}
+  {% endif %}
+  {% endwith %}
+
+  Your Posts:
+
+  <table>
+  	<th>Item ID</th>
+  	<th>Time</th>
+  	<th>Name</th>
+  	<th>Post</th>
+
+
+
+  {% for line in posts %}
+  	<tr>
+  		<td>{{line.item_id}}</td>
+  		<td>{{line.post_time}}</td>
+  		<td>{{line.item_name}}</td>
+  		<td>{{line.file_path}}</td>
+      <td> <a href="/tagging?&item_id={{line.item_id}}">Tag</a></td>
+      <td> <a href="/rate?&item_id={{line.item_id}}">Rate</a></td>
+      <td> <a href="/more?&item_id={{line.item_id}}">More</a></td>
+      <td><a href="/deletepost?item_id={{line.item_id}}">Delete</a></td>
+  	</tr>
+  {% endfor %}
+</table></br>
+
+Your Friends:
+
+<table>
+  <th>Email</th>
+  <th>First Name</th>
+  <th>Last Name</th>
+  <th>Friendgroup</th>
+
+
+
+{% for person in groups %}
+  <tr>
+    <td>{{person.email}}</td>
+    <td>{{person.fname}}</td>
+    <td>{{person.lname}}</td>
+    <td>{{person.fg_name}}</td>
+    <!-- <td><a href="/unfriend?friend_email={{person.email}}&owner_email={{person.owner_email}}&fg_name={{person.fg_name}}">Unfriend</a></td> -->
+    <td><a href="/unfriend?friend_email={{person.email}}&fg_name={{person.fg_name}}&owner_email={{person.owner_email}}">Unfriend</a></td>
+    {% if person.mem_status !="moderator"%}
+      <td><a href= "/givemod?to_mod={{person.email}}&fg_name={{person.fg_name}}">Moderate</a></td>
+    {% endif %}
+    {% if person.mem_status =="moderator"%}
+      <td><a href= "/unmod?de_mod={{person.email}}&fg_name={{person.fg_name}}">Demote</a></td>
+    {% endif %}
+  </tr>
+{% endfor %}
+</table></br>
+
+People you Moderate:
+
+<table>
+  <th>Email</th>
+  <th>First Name</th>
+  <th>Last Name</th>
+  <th>Friendgroup</th>
+  <th>Friendgroup Owner</th>
+
+{% for person in moddata %}
+  <tr>
+    <td>{{person.email}}</td>
+    <td>{{person.fname}}</td>
+    <td>{{person.lname}}</td>
+    <td>{{person.fg_name}}</td>
+    <td>{{person.owner_email}}</td>
+    <!-- {% if person.mem_status =="member"%} -->
+    <!-- <td><a href="/unfriend?friend_email={{person.email}}&owner_email={{person.owner_email}}&fg_name={{person.fg_name}}">Unfriend</a></td> -->
+    <td><a href="/unfriend?friend_email={{person.email}}&fg_name={{person.fg_name}}&owner_email={{person.owner_email}}">Remove</a></td>
+    <!-- {% endif %} -->
+  </tr>
+{% endfor %}
+</table></br>
+
+  <style type="text/css">
+  	table, th, td{
+  		border: 1px solid black;
+  	}
+  </style>
+
+<a href="/home">Home</a>
+
+</body>
+
+
+</html>

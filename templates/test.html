@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+Which friend gorups?:
+<form action="/testassign" method="POST">
+  {% for group in elements %}
+  <input type="checkbox" name="groupassign" value={{group.fg_name}} />{{group.fg_name}}
+  {% endfor %}
+  <input type="submit" value = Share />
+</form>
+
+</body>
+
+</html>

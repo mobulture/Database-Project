@@ -1,0 +1,43 @@
+<html>
+<head>
+</head>
+<body>
+
+
+<style type="text/css">
+	table, th, td{
+		border: 1px solid black;
+	}
+</style>
+
+
+Current Tags:
+
+<table>
+	<th>Tagger_email</th>
+	<th>Taggee_email</th>
+	<th>Item_id</th>
+	<th>Status</th>
+	<th>Time</th>
+	<th>Accept</th>
+	<th>Remove</th>
+
+
+
+{% for line in posts %}
+	<tr>
+		<td>{{line.tagger_email}}</td>
+		<td>{{line.taggee_email}}</td>
+		<td>{{line.item_id}}</td>
+		<td>{{line.status}}</td>
+		<td>{{line.time}}</td>
+		<td> <a href="/tag_valid?tagger_email={{line.tagger_email}}&taggee_email={{line.taggee_email}}&item_id={{line.item_id}}&acceptance = true"> Accept </a></td>
+		<td> <a href="/tag_valid?tagger_email={{line.tagger_email}}&taggee_email={{line.taggee_email}}&item_id={{line.item_id}}acceptance = false"> Remove </a></td>
+	</tr>
+{% endfor %}
+</table>
+
+<br>
+
+</body>
+<a href="/home">home</a>

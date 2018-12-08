@@ -1,0 +1,53 @@
+<html>
+<head>
+</head>
+<body>
+
+
+<style type="text/css">
+	table, th, td{
+		border: 1px solid black;
+	}
+</style>
+
+Pending Tags:
+
+<table>
+  <th>Item_id</th>
+	<th>Tagger</th>
+	<th>Time</th>
+
+{% for line in pending_tags %}
+	<tr>
+    <td>{{line.item_id}}</td>
+		<td>{{line.email_tagger}}</td>
+		<td>{{line.tagtime}}</td>
+		  <td> <a href="/tag_valid?email_tagger={{line.email_tagger}}&item_id={{line.item_id}}&acceptance=true">Accept</a></td>
+		  <td> <a href="/tag_valid?email_tagger={{line.email_tagger}}&item_id={{line.item_id}}&acceptance=false">Decline</a></td>
+	</tr>
+{% endfor %}
+</table>
+
+<br>
+
+Current Tags:
+
+<table>
+  <th>Item_id</th>
+	<th>Tagger</th>
+	<th>Time</th>
+
+{% for line in current_tags %}
+	<tr>
+    <td>{{line.item_id}}</td>
+		<td>{{line.email_tagger}}</td>
+		<td>{{line.tagtime}}</td>
+	</tr>
+{% endfor %}
+</table>
+
+<br>
+
+</body>
+<a href="/home">home</a>
+</html>

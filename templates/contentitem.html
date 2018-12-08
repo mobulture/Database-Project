@@ -1,0 +1,17 @@
+<html>
+<head>
+</head>
+<body>
+
+Which friend gorups would you like to share your content with?:
+<form action="/assignfg" method="POST">
+  {% for group in groups %}
+  <input type="checkbox" name="groupassign" value={{group.fg_name}}/{{group.owner_email}} />{{group.fg_name}}
+  </br>
+  {% endfor %}
+	<input type="submit" value = Share />
+</form>
+
+</body>
+
+</html>
