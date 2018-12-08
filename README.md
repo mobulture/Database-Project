@@ -25,14 +25,15 @@ Screenshots demonstrating the deletepost features:
 1.1 Under the Your Profile page, the user has the option to delete posts
 
 [!1](https://github.com/mobulture/Database-Project/tree/master/Screenshots/1.png)
+
 Corresponding Data:
-[!2](https://github.com/mobulture/Database-Project/tree/master/Screenshots/2.png)
+![2](https://github.com/mobulture/Database-Project/tree/master/Screenshots/2.png)
 
 1.2 After deleting the “test” post, the post is no longer shown
 [!3](https://github.com/mobulture/Database-Project/tree/master/Screenshots/3.png)
 
 The post is also no longer in the database:
-[4](https://github.com/mobulture/Database-Project/tree/master/Screenshots/4.png)
+[!4](https://github.com/mobulture/Database-Project/tree/master/Screenshots/4.png)
  
 2. David Li - Defriending
 A user will be able to remove someone from a FriendGroup the user owns.This is a good feature because FriendGroups should be dynamic. It should be possible to remove friends in addition to adding them.  Nothing additional will need to be added to the database schema. The user will simply be removed from the FriendGroup. (posts are also removed?) (dont need to talk about mem_status here i believe, will only say if they are a member..)
@@ -139,6 +140,7 @@ Screenshots demonstrating the comments feature:
 
 [!14](https://github.com/mobulture/Database-Project/tree/master/Screenshots/14.png)
 [!15](https://github.com/mobulture/Database-Project/tree/master/Screenshots/15.png)
+
 4.3 Database before the “cool” comment is posted: 
 
 [!16](https://github.com/mobulture/Database-Project/tree/master/Screenshots/16.png)
