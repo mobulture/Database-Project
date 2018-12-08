@@ -1,0 +1,26 @@
+'''
+#the following I intented to implement with unfriend but have been unsuccessful in getting them to work properly
+#the queries do not return anything
+#When someone is removed from a fg, the items that the user added to that fg
+#should no longer be visible along with tags, comments, and ratings that were
+#left by other users of that fg
+
+this is supposed to delete a rating if the the unfriend results in
+a fg no longer having visability to a contentitem and someone from that
+fg left it
+deleterate = 'delete from rate where item_id in (select item_id from belong natural join share where owner_email = %s and fg_name = %s and email = %s) and (email in (select email from belong where fg_name = %s and owner_email = %s) and email not in (select email from belong natural join share where fg_name != %s and item_id in (select item_id from belong natural join share where owner_email = %s and fg_name = %s and email = %s)))'
+cursor.execute(deleterate, (admin_email, fg_name, friend_email, fg_name, admin_email, fg_name, admin_email, fg_name, friend_email))
+conn.commit()
+
+this is supposed to delete a comment if the the unfriend results in
+a fg no longer having visability to a contentitem and someone from that
+fg left it
+deletecomment = 'delete from comments where item_id in (select item_id from belong natural join share where owner_email = %s and fg_name = %s and email = %s) and (email_comment in (select email from belong where fg_name = %s and owner_email = %s) and email_comment not in (select email from belong natural join share where fg_name != %s and item_id in (select item_id from belong natural join share where owner_email = %s and fg_name = %s and email = %s)))'
+cursor.execute(deletecomment, (admin_email, fg_name, friend_email, fg_name, admin_email, fg_name, admin_email, fg_name, friend_email))
+conn.commit()
+
+#this removes the contentitem if no user can see it anymore
+notseen = 'delete from contentitem where item_id not in (select distinct item_id from contentitem where item_id in (select item_id from contentitem natural join belong natural join share)) and item_id not in (select DISTINCT item_id from contentitem where is_pub = true)'
+cursor.execute(notseen)
+conn.commit
+'''
