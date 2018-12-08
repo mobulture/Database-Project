@@ -21,14 +21,18 @@ itemToDelete = 'DELETE FROM contentitem
 cursor.execute(itemToDelete, (item_id))
 
 Screenshots demonstrating the deletepost features: 
+
 1.1 Under the Your Profile page, the user has the option to delete posts
+
 [!1](https://github.com/mobulture/Database-Project/tree/master/Screenshots/1.png)
 Corresponding Data:
+[!2](https://github.com/mobulture/Database-Project/tree/master/Screenshots/2.png)
 
 1.2 After deleting the “test” post, the post is no longer shown
+[!3]((https://github.com/mobulture/Database-Project/tree/master/Screenshots/3.png)
 
 The post is also no longer in the database:
-
+[4](https://github.com/mobulture/Database-Project/tree/master/Screenshots/4.png)
  
 2. David Li - Defriending
 A user will be able to remove someone from a FriendGroup the user owns.This is a good feature because FriendGroups should be dynamic. It should be possible to remove friends in addition to adding them.  Nothing additional will need to be added to the database schema. The user will simply be removed from the FriendGroup. (posts are also removed?) (dont need to talk about mem_status here i believe, will only say if they are a member..)
@@ -55,11 +59,19 @@ cursor.execute(itemToDelete, (friend_email, fg_name, admin_email))
 Screenshots demonstrating the unfriend feature: 
 2.1 Under the Your Profile page, the user has the option to defriend a member,  thus removing them from a group.
 
+[!5](https://github.com/mobulture/Database-Project/tree/master/Screenshots/5.png)
+
 Corresponding Data:
+
+[!6](https://github.com/mobulture/Database-Project/tree/master/Screenshots/6.png)
 
 2.2 After removing John Doe from people, John Doe is no longer listed as a member of people. 
 
+[!7](https://github.com/mobulture/Database-Project/tree/master/Screenshots/7.png)
+
 He is also no longer listed as a member in the database. 
+
+[!8](https://github.com/mobulture/Database-Project/tree/master/Screenshots/8.png)
 
  3. Eli Zhu – Member Hierarchy
  Pricosha will allow owners to promote members to be moderators of a FriendGroup. A moderator has the ability to remove members from the FriendGroup. Owners can also demote members from being moderators. This feature allows more users to have an input on who can belong to a FriendGroup. This additional feature will make users more invested in their FriendGroups. The attribute mem_status was added to Belong to indicate if a member was an admin or moderator. 
@@ -84,6 +96,8 @@ cursor.execute(mod_query,(email,fg_name, de_mod))
 
 Screenshots demonstrating the givemod/unmod features: 
 3.1 When a user logs in, the home page displays what groups the user owns as well as groups the user moderates. 
+
+[!9](https://github.com/mobulture/Database-Project/tree/master/Screenshots/9.png)
 
 3.2 The owner can choose who can be a moderator in the Your Profile page
 
