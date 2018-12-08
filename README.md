@@ -29,7 +29,7 @@ Corresponding Data:
 [!2](https://github.com/mobulture/Database-Project/tree/master/Screenshots/2.png)
 
 1.2 After deleting the “test” post, the post is no longer shown
-[!3]((https://github.com/mobulture/Database-Project/tree/master/Screenshots/3.png)
+[!3](https://github.com/mobulture/Database-Project/tree/master/Screenshots/3.png)
 
 The post is also no longer in the database:
 [4](https://github.com/mobulture/Database-Project/tree/master/Screenshots/4.png)
@@ -101,10 +101,14 @@ Screenshots demonstrating the givemod/unmod features:
 
 3.2 The owner can choose who can be a moderator in the Your Profile page
 
+[!10](https://github.com/mobulture/Database-Project/tree/master/Screenshots/10.png)
+
 Corresponding Data:
 
-3.3 Data after owner demotes John Doe from being a moderator in people
+[!11] (https://github.com/mobulture/Database-Project/tree/master/Screenshots/11.png)
 
+3.3 Data after owner demotes John Doe from being a moderator in people
+[!12](https://github.com/mobulture/Database-Project/tree/master/Screenshots/12.png)
  
 4. Nowsha Islam – Comments
 User will be able to add comments to ContentItems that are visible to them. A comments table was added to the database. The comments table contains the following attributes: comment_id, comment, comment_time, item_id, and email_comment (the email of the user who commented.) The primary key is comment_id. The attribute item_id in comments is a foreign key from comments, referencing ContentItem(item_id.)
@@ -129,9 +133,16 @@ cursor.execute(ins, (comment, time, item_id, email))
 Screenshots demonstrating the comments feature: 
 4.1 When the user logs in, the option to comment on other people’s posts is shown on the home page. 
 
+[!13](https://github.com/mobulture/Database-Project/tree/master/Screenshots/13.png)
+
 4.2 Clicking on Comments will show a page that gives the option to comment on the selected ContentItem and previous comments. 
 
+[!14](https://github.com/mobulture/Database-Project/tree/master/Screenshots/14.png)
+[!15](https://github.com/mobulture/Database-Project/tree/master/Screenshots/15.png)
 4.3 Database before the “cool” comment is posted: 
+
+[!16](https://github.com/mobulture/Database-Project/tree/master/Screenshots/16.png)
 
 4.4 Database after the “cool” comment is posted:
 
+[!17](https://github.com/mobulture/Database-Project/tree/master/Screenshots/17.png)
