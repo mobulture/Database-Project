@@ -26,7 +26,7 @@ Screenshots demonstrating the deletepost features:
 
 1.1 Under the Your Profile page, the user has the option to delete posts
 
-![1](https://raw.githubusercontent.com/mobulture/Database-Project/tree/master/Screenshots/1.png)
+![1](Screenshots/1.png)
 
 Corresponding Data:
 ![2](https://github.com/mobulture/Database-Project/tree/master/Screenshots/2.png)
