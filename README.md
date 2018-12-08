@@ -1,9 +1,11 @@
 # Database-Project
 
 Intro to Databases Project
-Pricosha Extra Features
+Pricosha 
 Nowsha Islam, David Li, Eli Zhu
-
+# Pricosha 
+Pricosha is a platform for friends to connect and share content with their social circles. Users are allowed to create groups for their friends, families, or other circles. Users are able to post content and share that content with their groups. Users are able to interact with items by sharing, tagging another person in that item , or by rating the item. Users are able to interact with other users by adding them to groups and tagging them.
+# Extra Features
 1. David Li – Deleting a post
 Pricosha allows the user to remove a ContentItem that they have posted. Any person who was tagged will no longer be tagged. This is a good feature because it’s very plausible a user would want to remove something they posted. Nothing additional will need to be added to the database schema. The post will simply be removed.
 
@@ -139,6 +141,7 @@ Screenshots demonstrating the comments feature:
 4.2 Clicking on Comments will show a page that gives the option to comment on the selected ContentItem and previous comments. 
 
 ![14](https://github.com/mobulture/Database-Project/tree/master/Screenshots/14.png)
+
 ![15](https://github.com/mobulture/Database-Project/tree/master/Screenshots/15.png)
 
 4.3 Database before the “cool” comment is posted: 
